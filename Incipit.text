@@ -1,0 +1,5 @@
+L'obbiettivo e' quello di copiare un sito che ho gia' fatto ma farlo con Django.
+Obbiettivi secondari:
+  Farlo diventare responsivo (JavaScript front end?)
+  HTTPS quindi autentificazione SSL
+  Esploarare alternative per quanto riguarda il server hosting
