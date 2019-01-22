@@ -1,20 +1,5 @@
 from django.shortcuts import render
-
-
-posts = [
-    {
-        'author': 'Lorenzo Brizzi',
-        'title': 'Blog Post',
-        'content': 'First post content',
-        'date_posted': 'August 27, 2018'
-    },
-    {
-        'author': 'Sara Pedrotti',
-        'title': 'New Post',
-        'content': 'Second post content',
-        'date_posted': 'August 28, 2018'
-    }
-]
+from .models import Post
 
 
 def home(request):
@@ -28,7 +13,6 @@ def watches(request):
 
 def blog(request):
     context = {
-        'posts': posts
+        'posts': Post.objects.all()
     }
     return render(request, 'home/blog.html', context, {'title': 'Blog'})
-
