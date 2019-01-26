@@ -1,3 +1,4 @@
+from django.views.generic import ListView, DetailView
 from django.shortcuts import render
 from .models import Post
 
@@ -16,3 +17,13 @@ def blog(request):
         'posts': Post.objects.all()
     }
     return render(request, 'home/blog.html', context, {'title': 'Blog'})
+
+
+class PostListView(ListView):
+    model = Post
+    template_name = 'home/blog.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+
+class PostDetailView(DetailView):
+    model = Post
